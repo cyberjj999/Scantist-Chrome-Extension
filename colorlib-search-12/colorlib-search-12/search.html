@@ -1,0 +1,123 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="author" content="colorlib.com">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,900|Poppins:700" rel="stylesheet" />
+    <link href="css/main.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="s012">
+	
+      <form>
+	   <div class="img-container" style="text-align:center">
+          <img src="../custom-images/scantist-logo.png" style="width:400px;height:100px;" class="responsive-image">
+		  </div>
+        <fieldset>
+          <legend style="text-align:center">Search For Vulnerable Libraries</legend>
+        </fieldset>
+		
+        <div class="inner-form">
+			<h2 style="text-align:center">Filter by Package Manager</h2>
+		  <header>
+            <div class="travel-type-wrap">
+              <div class="item active">
+                <div class="group-icon">
+                <img src="../custom-images/all.png" style="width:100px;height:50px;">
+                </div>
+                <span>VIEW ALL</span>
+              </div>
+              <div class="item">
+                <div class="group-icon">
+				<img src="../custom-images/github-transparent.png" style="width:100px;height:50px;">
+                </div>
+                <span>GITHUB</span>
+              </div>
+              <div class="item">
+                <div class="group-icon">
+				<img src="../custom-images/maven-transparent.png" style="width:100px;height:50px;">
+                </div>
+                <span>MAVEN</span>
+              </div>
+              <div class="item">
+                <div class="group-icon">
+                 <img src="../custom-images/pypi-transparent.png" style="width:100px;height:50px;">
+                </div>
+                <span>PYPI</span>
+              </div>
+			  
+			    <div class="item">
+                <div class="group-icon">
+                 <img src="../custom-images/NPM.png" style="width:100px;height:50px;">
+                </div>
+                <span>NPM</span>
+              </div>
+            </div>
+          </header>
+          <div class="main-form" id="main-form">
+            <div class="row">
+			<h2 style="text-align:center">SEARCH</h2>
+              <div class="input-wrap">
+                <div class="icon-wrap">
+                  <svg xmlns="http://www.w3.org/2000/svg"  width="34" height="34" viewBox="0 0 18 18">
+                    <path d="M18.125,15.804l-4.038-4.037c0.675-1.079,1.012-2.308,1.01-3.534C15.089,4.62,12.199,1.75,8.584,1.75C4.815,1.75,1.982,4.726,2,8.286c0.021,3.577,2.908,6.549,6.578,6.549c1.241,0,2.417-0.347,3.44-0.985l4.032,4.026c0.167,0.166,0.43,0.166,0.596,0l1.479-1.478C18.292,16.234,18.292,15.968,18.125,15.804 M8.578,13.99c-3.198,0-5.716-2.593-5.733-5.71c-0.017-3.084,2.438-5.686,5.74-5.686c3.197,0,5.625,2.493,5.64,5.624C14.242,11.548,11.621,13.99,8.578,13.99 M16.349,16.981l-3.637-3.635c0.131-0.11,0.721-0.695,0.876-0.884l3.642,3.639L16.349,16.981z"></path>
+                  </svg>
+                </div>
+				
+                <div class="input-field">
+                  <label>SEARCH FOR</label>
+                  <input type="text" placeholder="Packages, Versions" />
+                </div>
+              </div>
+            </div>
+         
+            <div class="row last">
+              <button class="btn-search" type="button">Search</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+    <script src="js/extention/choices.js"></script>
+    <script>
+      const choices = new Choices('[data-trigger]',
+      {
+        searchEnabled: false,
+        itemSelectText: '',
+      });
+
+    </script>
+    <script src="js/extention/flatpickr.js"></script>
+    <script>
+      flatpickr(".datepicker",
+      {
+        dateFormat: "m/d/y"
+      });
+      var btnTypes = document.querySelectorAll('.travel-type-wrap .item')
+      for (let i = 0; i < btnTypes.length; i++)
+      {
+        btnTypes[i].addEventListener('click', function()
+        {
+          for (let i = 0; i < btnTypes.length; i++)
+          {
+            btnTypes[i].classList.remove('active')
+          }
+          btnTypes[i].classList.add('active')
+        })
+      }
+
+    </script>
+  </body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>
+
+<style>
+html, body {margin: 0; height: 100%; overflow: auto;}
+
+
+.responsive-image {
+  max-width: 100%;
+  height: auto;
+}
+
+</style>
