@@ -12,11 +12,12 @@
 	
       <form>
 	   <div class="img-container" style="text-align:center">
-          <img src="../custom-images/scantist-logo.png" style="width:400px;height:100px;" class="responsive-image">
+          <img src="images/scantist-logo.png" style="width:400px;height:100px;" class="responsive-image">
 		  </div>
         <fieldset>
           <legend style="text-align:center">Search For Vulnerable Libraries</legend>
         </fieldset>
+		
 		
         <div class="inner-form">
 			<h2 style="text-align:center">Filter by Package Manager</h2>
@@ -24,32 +25,32 @@
             <div class="travel-type-wrap">
               <div class="item active">
                 <div class="group-icon">
-                <img src="../custom-images/all.png" style="width:100px;height:50px;">
+                <img src="images/all.png" style="min-width:75px;height:60px;max-width:100px;width:85px;"> 
                 </div>
                 <span>VIEW ALL</span>
               </div>
               <div class="item">
                 <div class="group-icon">
-				<img src="../custom-images/github-transparent.png" style="width:100px;height:50px;">
+				<img src="images/github-transparent.png" style="min-width:75px;height:60px;max-width:100px;width:85px;">
                 </div>
                 <span>GITHUB</span>
               </div>
               <div class="item">
                 <div class="group-icon">
-				<img src="../custom-images/maven-transparent.png" style="width:100px;height:50px;">
+				<img src="images/maven-transparent.png" style="min-width:75px;height:60px;max-width:100px;width:85px;">
                 </div>
                 <span>MAVEN</span>
               </div>
               <div class="item">
                 <div class="group-icon">
-                 <img src="../custom-images/pypi-transparent.png" style="width:100px;height:50px;">
+                 <img src="images/pypi-transparent.png" style="min-width:75px;height:60px;max-width:100px;width:85px;">
                 </div>
                 <span>PYPI</span>
               </div>
 			  
 			    <div class="item">
                 <div class="group-icon">
-                 <img src="../custom-images/NPM.png" style="width:100px;height:50px;">
+                 <img src="images/NPM.png" style="min-width:75px;height:60px;max-width:100px;width:85px;"> <!--style="width:100px;height:50px;" -->
                 </div>
                 <span>NPM</span>
               </div>
@@ -67,19 +68,20 @@
 				
                 <div class="input-field">
                   <label>SEARCH FOR</label>
-                  <input type="text" placeholder="Packages, Versions" />
+                  <input id="user-input" type="text" placeholder="Packages, Versions" />
                 </div>
               </div>
             </div>
          
             <div class="row last">
-              <button class="btn-search" type="button">Search</button>
+              <button class="btn-search" type="button" id="search-bar">Search</button>
             </div>
           </div>
         </div>
       </form>
     </div>
     <script src="js/extention/choices.js"></script>
+	<!--
     <script>
       const choices = new Choices('[data-trigger]',
       {
@@ -88,7 +90,10 @@
       });
 
     </script>
+	-->
     <script src="js/extention/flatpickr.js"></script>
+	<script src="js/main.js"></script>
+	<!--
     <script>
       flatpickr(".datepicker",
       {
@@ -107,7 +112,8 @@
         })
       }
 
-    </script>
+    </script> -->
+	
   </body><!-- This templates was made by Colorlib (https://colorlib.com) -->
 </html>
 
