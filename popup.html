@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="author" content="colorlib.com">
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,900|Poppins:700" rel="stylesheet" />
+	<link href="css/bootstrap-4.0.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
     <link href="css/main.css" rel="stylesheet" />
   </head>
   <body>
@@ -113,17 +114,126 @@
       }
 
     </script> -->
+	<br><br><br>	<br><br><br>
+
+	<div style="text-align:center">
+	<div class="tooltip">Jquery 3.4.1
+  <span class="tooltiptext">
+   <!--
+  <h2>Critcal Level : </h2>
+  <h2>Score : 9/10<h2>
+  <h2>Last Updated Date : 20 January 2019</h2>
+  <h2>Licensing : MIT (Free-to-use)</h2>
+
+  <button type="button" class="button">View More Information</button>
+ -->
+					<div style="display:inline-block;padding-left:5px;padding-right:30px">
+		                <img src="images/tool-tip/white_criticality.png" style="width:50px;display:inline;">
+						
+						<text style="color:white;display:block;font-weight:bold">Criticality</text>
+						<text style="color:white;display:block">High</text>
+
+					</div>
+					
+					<div style="display:inline-block;padding-left:5px;padding-right:30px">
+						<img src="images/tool-tip/white_score.png" style="width:50px;display:inline;"> 
+						
+						<text style="color:white;display:block;font-weight:bold">Score</text>
+						<text style="color:white;display:block">9/10</text>
+					</div>
+					
+					<div style="display:inline-block;padding-left:5px;padding-right:30px">
+		                <img src="images/tool-tip/white_date.png" style="width:50px;display:inline;"> 
+						
+						<text style="color:white;display:block;font-weight:bold">Created Date</text>
+						<text style="color:white;display:block">22 January 2019</text>
+
+					</div>
+					
+					<div style="display:inline-block;padding-left:5px;padding-right:12px">
+		                <img src="images/tool-tip/white_license.png" style="width:50px;display:inline;">
+						
+						<text style="color:white;display:block;font-weight:bold">License</text>
+						<text style="color:white;display:block">MIT</text>
+
+					</div>
+					<br><br>
+				
+					  <button type="button" class="button" id="viewReport" onclick=" window.open('report.html','_blank')">Click Here For More Information</button>
+					
+					<!-- 
+					Navigate to new page
+					onclick="location.href = 'report.html'"
+					New Tab
+					onclick=" window.open('report.html','_blank')
+					-->
+					
+			
+  </span>
+	</div>
+	</div>
 	
+
   </body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+  
 </html>
 
 <style>
 html, body {margin: 0; height: 100%; overflow: auto;}
 
-
 .responsive-image {
   max-width: 100%;
   height: auto;
 }
+
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 500px;
+  <!--background-color: linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet);
+   #42B4EB -->
+  background-color: #47C1E5; /* For browsers that do not support gradients */
+  background-image: linear-gradient(to right, #47C1E5, #338CF0);
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -60px;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+
+.button {
+  background-color: red;
+  border:none;
+  border-radius: 6px;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+} 
+
+.button:hover {
+  background-color: #cc1839;
+}
+
 
 </style>
