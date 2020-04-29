@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Table V02</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+<!--===============================================================================================
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css"> -->
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/perfect-scrollbar/perfect-scrollbar.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+<!--===============================================================================================-->
+
+
+</head>
+<body>	
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,900|Poppins:700" rel="stylesheet" />
+    <link href="../css/main(changed).css" rel="stylesheet" />
+	
+    <div class="s012">
+						<!--<button onclick="goToResultTable()" id="scrollUpBtn">TESTESTESTTESTETTSETESETSTT</button>-->
+
+					<button onclick="goToTop()" id="scrollUpBtn" title="Go to top">Go to the Top</button>
+
+
+
+      <form>
+	   <div class="img-container" style="text-align:center;background-color:black">
+          <img src="../../images/scantist-logo.png" style="width:400px;height:100px;" class="responsive-image">
+		  </div>
+        <fieldset>
+          <legend style="text-align:center">Search For Vulnerable Libraries</legend>
+        </fieldset>
+		
+		
+        <div class="inner-form">
+			<h4 style="text-align:center;font-weight:bold;">Filter by Package Manager</h4>
+			<br>
+		  <header>
+            <div class="travel-type-wrap">
+              <div class="item active">
+                <div class="group-icon">
+                <img src="../../images/all.png" style="min-width:75px;height:60px;max-width:100px;width:85px;"> 
+                </div>
+                <span>VIEW ALL</span>
+              </div>
+              <div class="item">
+                <div class="group-icon">
+				<img src="../../images/github-transparent.png" style="min-width:75px;height:60px;max-width:100px;width:85px;">
+                </div>
+                <span>GITHUB</span>
+              </div>
+              <div class="item">
+                <div class="group-icon">
+				<img src="../../images/maven-transparent.png" style="min-width:75px;height:60px;max-width:100px;width:85px;">
+                </div>
+                <span>MAVEN</span>
+              </div>
+              <div class="item">
+                <div class="group-icon">
+                 <img src="../../images/pypi-transparent.png" style="min-width:75px;height:60px;max-width:100px;width:85px;">
+                </div>
+                <span>PYPI</span>
+              </div>
+			  
+			    <div class="item">
+                <div class="group-icon">
+                 <img src="../../images/NPM.png" style="min-width:75px;height:60px;max-width:100px;width:85px;"> <!--style="width:100px;height:50px;" -->
+                </div>
+                <span>NPM</span>
+              </div>
+            </div>
+          </header>
+          <div class="main-form" id="main-form">
+            <div class="myRow">
+			<h4 style="text-align:center;font-weight:bold;">SEARCH</h4>
+			<br>
+              <div class="input-wrap">
+                <div class="icon-wrap">
+                  <svg xmlns="http://www.w3.org/2000/svg"  width="34" height="34" viewBox="0 0 18 18">
+                    <path d="M18.125,15.804l-4.038-4.037c0.675-1.079,1.012-2.308,1.01-3.534C15.089,4.62,12.199,1.75,8.584,1.75C4.815,1.75,1.982,4.726,2,8.286c0.021,3.577,2.908,6.549,6.578,6.549c1.241,0,2.417-0.347,3.44-0.985l4.032,4.026c0.167,0.166,0.43,0.166,0.596,0l1.479-1.478C18.292,16.234,18.292,15.968,18.125,15.804 M8.578,13.99c-3.198,0-5.716-2.593-5.733-5.71c-0.017-3.084,2.438-5.686,5.74-5.686c3.197,0,5.625,2.493,5.64,5.624C14.242,11.548,11.621,13.99,8.578,13.99 M16.349,16.981l-3.637-3.635c0.131-0.11,0.721-0.695,0.876-0.884l3.642,3.639L16.349,16.981z"></path>
+                  </svg>
+                </div>
+				
+                <div class="input-field">
+
+                  <label>SEARCH FOR</label>
+				    <input id="user-input" type="text" placeholder="Packages, Versions..." />
+						
+                </div>
+              </div>
+            </div>
+         
+            <div class="myRow last">
+              <button class="btn-search" type="button" id="search-bar">Search</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+    <script src="../js/extention/choices.js"></script>
+	<!--
+    <script>
+      const choices = new Choices('[data-trigger]',
+      {
+        searchEnabled: false,
+        itemSelectText: '',
+      });
+
+    </script>
+	-->
+	<!-- Previous Position
+    <script src="../js/extention/flatpickr.js"></script>
+	<script src="../js/main.js"></script>
+	<script src="../js/scrollUpBtn.js"></script>
+
+	-->
+<style>
+
+.responsive-image {
+  max-width: 100%;
+  height: auto;
+}
+
+</style>
+
+	<div class="limiter" id='searchResultTable'>
+		<div class="container-table100">
+		
+			<div class="wrap-table100">
+						<!--<h1 style="text-align:center;color:white"> You searched for <span id='userSearch'>Jquery 3.1.4</span> </h1>-->
+						<br>
+					<div class="table">
+
+						<div class="row header">
+							<div class="cell">
+								Package Name
+							</div>
+							<div class="cell">
+								Version
+							</div>
+							<div class="cell">
+								Criticality
+							</div>
+							<div class="cell">
+								Score
+							</div>
+							<div class="cell">
+								License
+							</div>
+							<div class="cell">
+								Report
+							</div>
+						</div>
+
+						<div class="row rowBody">
+							<div class="cell" data-title="Package Name">
+								Vincent Williamson
+							</div>
+							<div class="cell" data-title="Version">
+								31
+							</div>
+							<div class="cell" data-title="Criticality">
+								iOS Developer
+							</div>
+							<div class="cell" data-title="Score">
+								Washington
+							</div>
+							<div class="cell" data-title="License">
+								MIT
+							</div>
+							<div class="cell" data-title="Report">
+								<button type="button" class="myBtn" id="viewReport" onclick=" window.open('../../report-template/bitbank/index.html','_blank')">View Report</button>
+							</div>
+						</div>
+
+					
+						<div class="row rowBody">
+							<div class="cell" data-title="Package Name">
+								Vincent Williamson
+							</div>
+							<div class="cell" data-title="Version">
+								31
+							</div>
+							<div class="cell" data-title="Criticality">
+								iOS Developer
+							</div>
+							<div class="cell" data-title="Score">
+								Washington
+							</div>
+							<div class="cell" data-title="License">
+								MIT
+							</div>
+							<div class="cell" data-title="Report">
+								<button type="button" class="myBtn" id="viewReport" onclick=" window.open('report.html','_blank')">View Report</button>
+							</div>
+						</div>
+						
+						
+						<div class="row rowBody">
+							<div class="cell" data-title="Package Name">
+								Vincent Williamson
+							</div>
+							<div class="cell" data-title="Version">
+								31
+							</div>
+							<div class="cell" data-title="Criticality">
+								iOS Developer
+							</div>
+							<div class="cell" data-title="Score">
+								Washington
+							</div>
+							<div class="cell" data-title="License">
+								MIT
+							</div>
+							<div class="cell" data-title="Report">
+								<button type="button" class="myBtn" id="viewReport" onclick=" window.open('report.html','_blank')">View Report</button>
+							</div>
+						</div>
+						
+						
+						<div class="row rowBody">
+							<div class="cell" data-title="Package Name">
+								Vincent Williamson
+							</div>
+							<div class="cell" data-title="Version">
+								31
+							</div>
+							<div class="cell" data-title="Criticality">
+								iOS Developer
+							</div>
+							<div class="cell" data-title="Score">
+								Washington
+							</div>
+							<div class="cell" data-title="License">
+								MIT
+							</div>
+							<div class="cell" data-title="Report">
+								<button type="button" class="myBtn" id="viewReport" onclick=" window.open('report.html','_blank')">View Report</button>
+							</div>
+						</div>
+						<div class="row rowBody">
+							<div class="cell" data-title="Package Name">
+								Vincent Williamson
+							</div>
+							<div class="cell" data-title="Version">
+								31
+							</div>
+							<div class="cell" data-title="Criticality">
+								iOS Developer
+							</div>
+							<div class="cell" data-title="Score">
+								Washington
+							</div>
+							<div class="cell" data-title="License">
+								MIT
+							</div>
+							<div class="cell" data-title="Report">
+								<button type="button" class="myBtn" id="viewReport" onclick=" window.open('report.html','_blank')">View Report</button>
+							</div>
+						</div>
+						<div class="row rowBody">
+							<div class="cell" data-title="Package Name">
+								Vincent Williamson
+							</div>
+							<div class="cell" data-title="Version">
+								31
+							</div>
+							<div class="cell" data-title="Criticality">
+								iOS Developer
+							</div>
+							<div class="cell" data-title="Score">
+								Washington
+							</div>
+							<div class="cell" data-title="License">
+								MIT
+							</div>
+							<div class="cell" data-title="Report">
+								<button type="button" class="myBtn" id="viewReport" onclick=" window.open('report.html','_blank')">View Report</button>
+							</div>
+						</div>
+						<div class="row rowBody">
+							<div class="cell" data-title="Package Name">
+								Vincent Williamson
+							</div>
+							<div class="cell" data-title="Version">
+								31
+							</div>
+							<div class="cell" data-title="Criticality">
+								iOS Developer
+							</div>
+							<div class="cell" data-title="Score">
+								Washington
+							</div>
+							<div class="cell" data-title="License">
+								MIT
+							</div>
+							<div class="cell" data-title="Report">
+								<button type="button" class="myBtn" id="viewReport" onclick=" window.open('../../report.html','_blank')">View Report</button>
+							</div>
+						</div>
+						<div class="row rowBody">
+							<div class="cell" data-title="Package Name">
+								Vincent Williamson
+							</div>
+							<div class="cell" data-title="Version">
+								31
+							</div>
+							<div class="cell" data-title="Criticality">
+								iOS Developer
+							</div>
+							<div class="cell" data-title="Score">
+								Washington
+							</div>
+							<div class="cell" data-title="License">
+								MIT
+							</div>
+							<div class="cell" data-title="Report">
+								<button type="button" class="myBtn" id="viewReport" onclick=" window.open('report.html','_blank')">View Report</button>
+							</div>
+						</div>
+						<div class="row rowBody">
+							<div class="cell" data-title="Package Name">
+								Vincent Williamson
+							</div>
+							<div class="cell" data-title="Version">
+								31
+							</div>
+							<div class="cell" data-title="Criticality">
+								iOS Developer
+							</div>
+							<div class="cell" data-title="Score">
+								Washington
+							</div>
+							<div class="cell" data-title="License">
+								MIT
+							</div>
+							<div class="cell" data-title="Report">
+								<button type="button" class="myBtn" id="viewReport" onclick=" window.open('report.html','_blank')">View Report</button>
+							</div>
+						</div>
+
+					</div>
+					
+			</div>
+		</div>
+	</div>
+
+
+<!-- I shifted the script down in order to select various dom elements-->
+	<script src="../js/extention/flatpickr.js"></script>
+	<script src="../js/main.js"></script>
+	<script src="../js/scrollUpBtn.js"></script>
+
+<!--===============================================================================================-->	
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="js/main.js"></script>
+<style>
+
+<!-- Search table should not be displayed at the start -->
+#searchResultTable {
+	display:none;
+}
+
+.myBtn {
+  background-color: red;
+  border:none;
+  border-radius: 6px;
+  display: inline-block;
+  color: black;
+  padding: 15px 28px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+} 
+
+.myBtn:hover {
+  background-color: #cc1839;
+}
+
+#scrollUpBtn {
+  display: block;
+  text-align:right;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 15px;
+  border: none;
+  outline: none;
+  background-color: #66ff00;
+  color: black;
+  cursor: pointer;
+  padding: 11px;
+  border-radius: 4px;
+}
+
+
+</style>
+</body>
+</html>

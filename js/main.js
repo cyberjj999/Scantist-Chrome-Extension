@@ -49,6 +49,10 @@
 	var searchBtn = document.getElementById('search-bar');
 	searchBtn.onclick = function(){
 		alert("You searched for " + inputField.value);
+
+		//Scroll to bottom of the page
+		document.documentElement.scrollTop = 730;
+		
 	}
 	/*
 	str = JSON.stringify(choices);
