@@ -29,9 +29,10 @@
     <link href="../css/main(changed).css" rel="stylesheet" />
 	
     <div class="s012">
-						<!--<button onclick="goToResultTable()" id="scrollUpBtn">TESTESTESTTESTETTSETESETSTT</button>-->
 
-					<button onclick="goToTop()" id="scrollUpBtn" title="Go to top">Go to the Top</button>
+		<!-- Cannot add onclick here due to chrome extension 
+		<button onclick="goToTop()" id="scrollUpBtn" title="Go to top">Go to the Top</button> -->
+		<button id="scrollUpBtn" title="Go to top">Go to the Top</button>
 
 
 
@@ -137,7 +138,7 @@
 
 	<div class="limiter" style='display:none'>
 		<div class="container-table100">
-		
+	
 			<div class="wrap-table100">
 						<h1 style="text-align:center;color:white" id='searchResult'> You searched for <span id='userSearch'>Jquery 3.1.4</span> </h1> 
 						<br>
@@ -164,6 +165,7 @@
 							</div>
 						</div>
 
+<!-- Previous HTML, now i generate this dynamically in main.js
 						<div class="row rowBody">
 
 							<div class="cell" data-title="Package Name">
@@ -185,7 +187,7 @@
 								<button type="button" class="myBtn" id="viewReport" onclick="window.open('report.html','_blank')">View Report</button>
 							</div>
 						</div>
-				
+				-->
 
 					</div>
 					

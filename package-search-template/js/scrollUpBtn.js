@@ -14,15 +14,20 @@ function scrollFunction() {
 }
 */
 
-// When the user clicks on the button, scroll to the top of the document
+
 function goToTop() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
 }
 
+// When the user clicks on the button, scroll to the top of the document
+document.getElementById("scrollUpBtn").addEventListener("click", function(){
+  goToTop();
+});	
 
-function goToResultTable() {
+
+/* function goToResultTable() {
   document.body.scrollTop = 30;
   document.documentElement.scrollTop = 1000;
 }
-
+ */

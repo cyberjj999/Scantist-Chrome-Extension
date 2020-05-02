@@ -1,0 +1,36 @@
+{
+    "manifest_version": 2,
+    "name": "Scantist - Vulnerable Package Scanner",
+    "version": "1.0",
+    "description": "A chrome extension that highlights vulnerable packages to developers",
+    "icons": {
+        "128": "icon/scantist128.png",
+        "48": "icon/scantist48.png",
+        "16": "icon/scantist16.png"
+ 
+    },
+	
+    "browser_action": {
+        "default_icon": "icon/scantist16.png",
+        "default_popup": "package-search-template/search-result-template/index.html",
+        "default_title": "Search for vulernable packages!"
+    },
+
+	"options_page" : "package-search-template/search-result-template/index.html",
+
+	"background": {
+		"scripts" : ["js/eventPage.js"],
+		"persistent" : false
+	},
+	
+    "permissions": [
+	   "activeTab",
+	   "http://*/",
+	   "https://*/*",
+	   "<all_urls>",
+	   "tabs",
+	   "contextMenus",
+	   "storage"
+	]
+
+}
